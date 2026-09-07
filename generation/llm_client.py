@@ -16,6 +16,7 @@ def call_llm(prompt: str, max_tokens: int = 500) -> str:
                 msg = client.chat.completions.create(
                     model="openai/gpt-oss-20b",
                     max_tokens=max_tokens,
+                    reasoning_effort="low",
                     messages=[{"role": "user", "content": prompt}]
                 )
                 return msg.choices[0].message.content
