@@ -1,6 +1,7 @@
 import json
 import os
 import sys
+import time
 sys.path.insert(0, os.path.dirname(__file__))
 from llm_client import call_llm
 
@@ -26,7 +27,7 @@ def generate_ai_paragraph(human_paragraph: dict) -> dict:
 
 if __name__ == "__main__":
     with open("../data/human_paragraphs.json") as f:
-        human_data = json.load(f)[:5]  # TEST: only first 5
+        human_data = json.load(f)[:40] 
 
     ai_data = []
     for i, item in enumerate(human_data, 1):
